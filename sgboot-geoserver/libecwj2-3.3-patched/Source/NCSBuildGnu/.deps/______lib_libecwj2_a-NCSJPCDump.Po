@@ -1,0 +1,4 @@
+______lib_libecwj2_a-NCSJPCDump.o: ../C/NCSEcw/NCSJP2/NCSJPCDump.cpp \
+ /usr/include/stdc-predef.h
+
+/usr/include/stdc-predef.h:

@@ -1,0 +1,4 @@
+NCSJPCDump.lo: ../C/NCSEcw/NCSJP2/NCSJPCDump.cpp \
+ /usr/include/stdc-predef.h
+
+/usr/include/stdc-predef.h:
