@@ -72,7 +72,9 @@ RUN cd libecwj2-3.3-patched \
     && cd ../.. \
     && make clean
 RUN cp geoserver-gdal-ext/*.jar /opt/apache-tomcat-8.5.27/webapps/geoserver/WEB-INF/lib/ \
-    && cp gdal-1.11.3/swig/java/gdal.jar /opt/apache-tomcat-8.5.27/webapps/geoserver/WEB-INF/lib/
-	# && cp geotools-18.2/*.jar /opt/apache-tomcat-8.5.27/webapps/geoserver/WEB-INF/lib/
+    && cp gdal-1.11.3/swig/java/gdal.jar /opt/apache-tomcat-8.5.27/webapps/geoserver/WEB-INF/lib/ \
+	&& cp geotools-18.2/gt-mongodb*.jar /opt/apache-tomcat-8.5.27/webapps/geoserver/WEB-INF/lib/ \
+    && cp geotools-18.2/mongo-java-driver*.jar /opt/apache-tomcat-8.5.27/webapps/geoserver/WEB-INF/lib/ \
+    && cp geotools-18.2/gt-app-schema*.jar /opt/apache-tomcat-8.5.27/webapps/geoserver/WEB-INF/lib/
 EXPOSE 8080
 CMD [ "/opt/apache-tomcat-8.5.27/bin/catalina.sh", "run" ]
