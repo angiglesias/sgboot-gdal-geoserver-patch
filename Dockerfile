@@ -14,9 +14,9 @@ RUN apt-get update && apt-get upgrade -y \
     && echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 seen true" | debconf-set-selections \
     && apt-get install -y oracle-java8-installer \
     && apt-get install -y libapr1-dev libssl-dev \
-    && wget http://apache.uvigo.es/tomcat/tomcat-8/v8.5.27/bin/apache-tomcat-8.5.27.tar.gz \
+    && wget https://archive.apache.org/dist/tomcat/tomcat-8/v8.5.27/bin/apache-tomcat-8.5.27.tar.gz \
     && tar -zxvf apache-tomcat-8.5.27.tar.gz && mv apache-tomcat-8.5.27 /opt/ && rm apache-tomcat-8.5.27.tar.gz \
-    && wget http://apache.uvigo.es/tomcat/tomcat-connectors/native/1.2.16/source/tomcat-native-1.2.16-src.tar.gz \
+    && wget https://archive.apache.org/dist/tomcat/tomcat-connectors/native/1.2.16/source/tomcat-native-1.2.16-src.tar.gz \
     && tar -zxvf tomcat-native-1.2.16-src.tar.gz && rm tomcat-native-1.2.16-src.tar.gz \
     && cd tomcat-native-1.2.16-src/native && ./configure --with-apr=/usr/bin/apr-1-config \
     --with-java-home=/usr/lib/jvm/java-8-oracle \
