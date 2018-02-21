@@ -59,6 +59,7 @@ WORKDIR /opt/sgboot-geoserver
 #     && sleep 30 \
 #     && /bin/sh -c "/opt/apache-tomcat-8.5.27/bin/catalina.sh stop"
 #Checks if Tomcat and APR work OK
+COPY conf/server.xml /opt/apache-tomcat-8.5.27/conf/server.xml
 RUN set -e \
 	&& nativeLines="$(/opt/apache-tomcat-8.5.27/bin/catalina.sh configtest 2>&1)" \
 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" \
@@ -102,5 +103,5 @@ RUN cp geoserver-gdal-ext/*.jar ${GEOSERVER_INSTALL_DIR}/WEB-INF/lib/ \
 # ENV GEOSERVER_DATA_DIR=/usr/local/geoserver
 # RUN mkdir ${GEOSERVER_DATA_DIR} \
 #     && mv /opt/apache-tomcat-8.5.27/webapps/geoserver/data/* ${GEOSERVER_DATA_DIR}
-EXPOSE 8080
+EXPOSE 8082
 CMD [ "/opt/apache-tomcat-8.5.27/bin/catalina.sh", "run" ]
