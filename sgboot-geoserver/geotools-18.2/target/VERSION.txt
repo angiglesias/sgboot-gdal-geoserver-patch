@@ -1,3 +1,0 @@
-version: 18.2
-git revision: fee9835d87b5f6a182370eab90a46d898fd6f987
-build date: 20-Jan-2018 06:37

@@ -1,0 +1,4 @@
+https://build.geoserver.org/geoserver/${branch}.x/ext-latest/geoserver-${branch}-SNAPSHOT-vectortiles-plugin.zip
+https://build.geoserver.org/geoserver/${branch}.x/ext-latest/geoserver-${branch}-SNAPSHOT-ysld-plugin.zip
+https://build.geoserver.org/geoserver/${branch}.x/community-latest/geoserver-${branch}-SNAPSHOT-mbstyle-plugin.zip
+https://build.geoserver.org/geoserver/${branch}.x/ext-latest/geoserver-${branch}-SNAPSHOT-gdal-plugin.zip
