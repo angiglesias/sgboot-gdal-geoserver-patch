@@ -1,3 +1,7 @@
 sgboot-geoserver/pnoa/
 target/
-plugins
+plugins/
+.project
+.classpath
+.settings
+.vscode
