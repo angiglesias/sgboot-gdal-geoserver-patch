@@ -10,9 +10,9 @@ ENV GEOSERVER_BRANCH=2.12 \
     GEOSERVER_INSTALL_DIR=/usr/local/geoserver \
     WEBAPPS_DIR=/usr/local/tomcat/webapps \
     JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 \
-    JAVA_OPTS=-Xbootclasspath/a:${GEOSERVER_INSTALL_DIR}/WEB-INF/lib/marlin-0.7.5-Unsafe.jar -Dsun.java2d.renderer=org.marlin.pisces.MarlinRenderingEngine \
     GDAL_DATA=/var/local/gdal-data
-ENV ANT_HOME=/usr/local/apache-ant-${ANT_VERSION} \
+ENV JAVA_OPTS=-Xbootclasspath/a:${GEOSERVER_INSTALL_DIR}/WEB-INF/lib/marlin-0.7.5-Unsafe.jar -Dsun.java2d.renderer=org.marlin.pisces.MarlinRenderingEngine \
+    ANT_HOME=/usr/local/apache-ant-${ANT_VERSION} \
     LD_LIBRARY_PATH=/opt/jni:${LD_LIBRARY_PATH}
 ENV PATH=${ANT_HOME}/bin:${JAVA_HOME}/bin:$PATH
 
