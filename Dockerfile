@@ -3,9 +3,9 @@ FROM tomcat:8.5-jre8-slim
 LABEL mantainer="Ángel Iglesias <angelo.fly1@gmail.com>"
 
 #PREPARES ENVIRONMENT AND TOMCAT
-ENV GEOSERVER_BRANCH=2.12 \
-    ANT_VERSION=1.10.2 \
-    GDAL_VERSION=2.2.3 \
+ENV GEOSERVER_BRANCH=2.14 \
+    ANT_VERSION=1.10.5 \
+    GDAL_VERSION=2.3.2 \
     GEOSERVER_DATA_DIR=/var/local/geoserver \
     GEOSERVER_INSTALL_DIR=/usr/local/geoserver \
     WEBAPPS_DIR=/usr/local/tomcat/webapps \
@@ -17,7 +17,7 @@ ENV JAVA_OPTS=-Xbootclasspath/a:${GEOSERVER_INSTALL_DIR}/WEB-INF/lib/marlin-0.7.
 ENV PATH=${ANT_HOME}/bin:${JAVA_HOME}/bin:$PATH
 
 RUN apt-get update && apt-get -y upgrade && \
-    apt-get -y install openjdk-8-jdk="$JAVA_DEBIAN_VERSION" &&\
+    apt-get -y install openjdk-8-jdk &&\
     apt-get -y install wget
 #GEOSERVER PREPARATIONS
 WORKDIR /tmp
@@ -60,7 +60,7 @@ RUN wget http://www-eu.apache.org/dist//ant/binaries/apache-ant-${ANT_VERSION}-b
     rm -rf apache-ant-${ANT_VERSION}-bin.zip
 
 ## Download gdal compilation
-RUN wget http://download.osgeo.org/gdal/2.2.3/gdal-${GDAL_VERSION}.tar.gz && \
+RUN wget http://download.osgeo.org/gdal/${GDAL_VERSION}/gdal-${GDAL_VERSION}.tar.gz && \
     tar -zxvf gdal-${GDAL_VERSION}.tar.gz && \
     rm -rf gdal-${GDAL_VERSION}.tar.gz
 
@@ -73,7 +73,7 @@ RUN apt-get -y install build-essential swig && \
     make install && \
     make clean && \
     cd ../gdal-${GDAL_VERSION} && \
-    ldconfig &&\
+    ldconfig && \
     ./configure --with-ecw=/usr/local --with-java=$JAVA_HOME && \
     make -j$(nproc) && \
     make install && \

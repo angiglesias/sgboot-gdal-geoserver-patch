@@ -48,10 +48,10 @@
 		<java.version>1.8</java.version>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
-		<geotools.version>18.2</geotools.version>
+		<geotools.version>20.0</geotools.version>
 	</properties>
-	<name>Fireback Geoserver docker</name>
-	<description>Fireback geoserver module</description>
+	<name>Geoserver Docker</name>
+	<description>Geoserver Image with GDAL and ECW SDK</description>
 	<dependencies>
 		<dependency>
 			<groupId>org.geotools</groupId>
